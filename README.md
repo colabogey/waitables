@@ -8,7 +8,7 @@
 ## Everything is an fd
 - The Linux versions of these facilities is based on the proposition that everything is an fd.
 - Analagous facilities developed utilize eventfd, timerfd, signalfd.
-- So a so-called waitablethread includes (hidden) an eventfd that can signal exit.
+- So a so-called waitablethread, for example, includes (hidden) an eventfd that can signal exit.
 - Similarly for SetEvent, ResetEvent.
 - Message posting utilizes standard message queues.
 - There are other 'minor players', but this is the general idea.

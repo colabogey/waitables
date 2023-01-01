@@ -15,7 +15,7 @@ CFLAGS = $(CFLAGSTOUSE) \
 
 LDFLAGS = 
 
-LIBFLAGS = -lvpgnixApp -lwaitable -lvpgnixlogger \
+LIBFLAGS = -lvpgnixApp -lwaitable -lvpgnixlogger -lvpgnixexception \
 	-lgtest -lgmock -lpthread -lc -lgcov -lrt \
 	-L$(PROJECT_BIN_DIR)
 

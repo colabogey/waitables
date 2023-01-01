@@ -1,6 +1,6 @@
 INCDIRS = -I../include \
 	-I$(LOGGER_INTERFACE_DIR) \
-	-I/usr/include/boost \
+	-I$(CSTRING_INTERFACE_DIR) \
 	-I$(WAITABLE_INTERFACE_DIR) \
 	-I$(VPGNIXAPP_INTERFACE_DIR)
 

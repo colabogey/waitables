@@ -93,6 +93,7 @@ void vpgnixlogger::write() {
 
             fprintf(stderr, "%s", dataVec.data());
             fwrite(dataVec.data(), 1, strlen(dataVec.data()), m_file);
+            fflush(m_file);
         }
     }
 }

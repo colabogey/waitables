@@ -9,7 +9,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <vpgnix.h>
-#include <runnableApp_interface.h>
+//#include <runnableApp_interface.h>
 #include <vpgnixlogger.h>
 #include <vpgnixApp.h>
 #include <wfmo.h>
@@ -56,8 +56,9 @@ protected:
 TEST_F(VpgnixAppTest, AintGotNoStinkingTests)
 {
 	// arrange
+    std::shared_ptr<loggerConfig> lc = std::make_shared<loggerConfig>();
     auto sp_logger = std::shared_ptr<ILogger>(new vpgnixlogger);
-    sp_logger->Initialize("/tmp");
+    sp_logger->Initialize(lc);
     auto sp_App = std::shared_ptr<IRunnableApp>(new vpgnixApp(sp_logger));
 	// act
 	std::string s1 = "zz";

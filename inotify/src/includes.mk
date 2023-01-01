@@ -1,0 +1,3 @@
+INCDIRS = -I../include \
+	-I$(OBSERVER_INTERFACE_DIR)
+

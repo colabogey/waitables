@@ -1,0 +1,2 @@
+INCDIRS = -I../include \
+	-I$(CSTRING_INTERFACE_DIR)

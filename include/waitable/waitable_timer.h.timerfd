@@ -1,0 +1,22 @@
+#pragma once
+#include <stdint.h>
+#include <sys/timerfd.h>
+
+class waitable_timer {
+  public:
+    waitable_timer();
+    virtual ~waitable_timer();
+    void create(int id);
+    void set(uint32_t);
+    void reset();
+    void stop();
+    void expired();
+    int get_id() { return m_id; };
+    int get_fd() { return m_fd; };
+
+  private:
+    int m_fd;
+    int m_id;
+    struct itimerspec m_itToRun;
+    struct itimerspec m_itToStop;
+};

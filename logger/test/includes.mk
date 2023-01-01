@@ -1,0 +1,4 @@
+INCDIRS = -I../include \
+	-I$(LOGGER_INTERFACE_DIR) \
+	-I$(CSTRING_INTERFACE_DIR)
+

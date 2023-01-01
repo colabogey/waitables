@@ -1,0 +1,11 @@
+#pragma once
+#include <string>
+#include <vector>
+
+class IMessageSetup {
+public:
+    virtual int initialize(std::shared_ptr<vector<std::string>> = 0;
+    virtual int open(std::string) = 0;
+    virtual int close(std::string) = 0;
+    virtual ~IMessageSetup() = default;
+};

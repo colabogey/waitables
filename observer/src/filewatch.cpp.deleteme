@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/inotify.h>
+#include <watcher.h>
+
+watcher::watcher(string fn)
+{
+	m_fn = fn;
+}
+
+watcher::~watcher()
+{
+        int res = inotify_rm_watch(m_fd, m_wd);
+        printf( "inotify_rm_watch says (%x)\n", res );
+        close(m_fd);
+}
+
+int watcher::watch()
+{
+        m_fd = inotify_init();
+        printf( "m_fd (%x)\n", m_fd );
+        m_wd = inotify_add_watch(m_fd, "/tmp/z", IN_MODIFY);
+        printf( "m_wd (%x)\n", m_wd );
+        for( int i = 5; i > 0; i--)
+        {
+                int amt = read(m_fd, &m_ine, sizeof(struct inotify_event));
+                printf( "got an inotify_event m_wd in struct is (%x)\n", m_ine.wd );
+        }
+}
+
+int trynewstuff()
+{
+
+	watcher *w = new watcher("/tmp/z");
+	w->watch();
+	delete w;
+}
+
+int main(char **argv, int argc)
+{
+	trynewstuff();
+	return(0);
+
+	int fd = inotify_init();
+	printf( "fd (%x)\n", fd );
+	int wd = inotify_add_watch(fd, "/tmp/z", IN_MODIFY);
+	printf( "wd (%x)\n", wd );
+	struct inotify_event ine;
+	for( int i = 5; i > 0; i--)
+	{
+		int amt = read(fd, &ine, sizeof(struct inotify_event));
+		printf( "got an inotify_event wd in struct is (%x)\n", ine.wd );
+	}
+
+	int res = inotify_rm_watch(fd, wd);
+	printf( "inotify_rm_watch says (%x)\n", res );
+
+	close(fd);
+	return 0;
+
+}

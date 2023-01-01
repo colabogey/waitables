@@ -1,0 +1,3 @@
+INCDIRS = -I../include \
+	-I$(WAITABLE_INTERFACE_DIR)
+

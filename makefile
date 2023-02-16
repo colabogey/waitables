@@ -1,4 +1,4 @@
-SUBDIRS := logger_interface vpgnixexception cstring logger inotify i\
+SUBDIRS := logger_interface vpgnixexception cstring logger inotify \
     observer waitable vpgnixApp vpgnixDaemon
 
 release:

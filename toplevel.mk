@@ -34,8 +34,10 @@ SHELL = /bin/sh
 CC = g++
 
 DEFS =  -DLINUX=1
-CFLAGSDEBUG = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
-CFLAGSRELEASE = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP
+#CFLAGSDEBUG = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
+#CFLAGSRELEASE = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP
+CFLAGSDEBUG = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
+CFLAGSRELEASE = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP
 
 $(info DEBUG="$(DEBUG)")
 ifeq (TRUE, $(DEBUG))
@@ -44,5 +46,4 @@ else
 CFLAGSTOUSE = $(CFLAGSRELEASE)
 endif
 $(info CFLAGSTOUSE="$(CFLAGSTOUSE)")
-
 

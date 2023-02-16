@@ -21,6 +21,11 @@ LIBFLAGS = -lcstring -lgtest -lgmock -lpthread -lc -lgcov -lrt \
 SRC_DIR     = ./
 BUILD_DIR   = ./build
 BIN_DIR     = ./bin
+
+$(shell mkdir -p $(PROJECT_BIN_DIR))
+$(shell mkdir -p $(BIN_DIR))
+$(shell mkdir -p $(BUILD_DIR))
+
 CSTRING_LIB     = ../src/bin/libcstring.a
 MYTESTAPP = cstringtest
 

@@ -24,6 +24,10 @@ BUILD_DIR   = ./build
 BIN_DIR     = ./bin
 WATCHER_LIB     = ../src/bin/libwatcher.a
 
+$(shell mkdir -p $(PROJECT_BIN_DIR))
+$(shell mkdir -p $(BIN_DIR))
+$(shell mkdir -p $(BUILD_DIR))
+
 include includes.mk
 
 SRCS    = $(wildcard $(SRC_DIR)/*.cpp)

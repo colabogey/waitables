@@ -24,6 +24,10 @@ BUILD_DIR   = ./build
 BIN_DIR     = ./bin
 INC_DIR	    = ../include
 
+$(shell mkdir -p $(PROJECT_BIN_DIR))
+$(shell mkdir -p $(BIN_DIR))
+$(shell mkdir -p $(BUILD_DIR))
+
 include includes.mk
 
 VPGNIXAP_LIB	= $(PROJECT_BIN_DIR)/libvpgnixApp.a

@@ -22,6 +22,10 @@ BIN_DIR     = ./bin
 INC_DIR	    = ../include
 WAITABLE_LIB = $(PROJECT_BIN_DIR)/libwaitable.a
 
+$(shell mkdir -p $(PROJECT_BIN_DIR))
+$(shell mkdir -p $(BIN_DIR))
+$(shell mkdir -p $(BUILD_DIR))
+
 include includes.mk
 
 SRCS    = $(wildcard $(SRC_DIR)/*.cpp)

@@ -23,6 +23,10 @@ BIN_DIR     = ./bin
 LOGGER_LIB     = ../src/bin/libfnixlogger.a
 MYTESTAPP   = loggertest
 
+$(shell mkdir -p $(PROJECT_BIN_DIR))
+$(shell mkdir -p $(BIN_DIR))
+$(shell mkdir -p $(BUILD_DIR))
+
 include includes.mk
 
 SRCS    = $(wildcard $(SRC_DIR)/*.cpp)

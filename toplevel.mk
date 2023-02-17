@@ -31,13 +31,14 @@ $(info CSTRING_INTERFACE_DIR="$(CSTRING_INTERFACE_DIR)")
 ##
 #global (common) settings
 SHELL = /bin/sh
-CC = g++
+#CC = g++
+CC = g++-11
 
 DEFS =  -DLINUX=1
-#CFLAGSDEBUG = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
-#CFLAGSRELEASE = -std=c++2a -O0 -g3 -fmessage-length=0 -MMD -MP
-CFLAGSDEBUG = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
-CFLAGSRELEASE = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP
+CFLAGSDEBUG = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
+CFLAGSRELEASE = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP
+#CFLAGSDEBUG = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
+#CFLAGSRELEASE = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP
 
 $(info DEBUG="$(DEBUG)")
 ifeq (TRUE, $(DEBUG))

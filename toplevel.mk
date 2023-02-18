@@ -35,8 +35,8 @@ SHELL = /bin/sh
 CC = g++-11
 
 DEFS =  -DLINUX=1
-CFLAGSDEBUG = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
-CFLAGSRELEASE = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP
+CFLAGSDEBUG = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage -fpermissive
+CFLAGSRELEASE = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP -fpermissive
 #CFLAGSDEBUG = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage
 #CFLAGSRELEASE = -std=c++17 -O0 -g3 -fmessage-length=0 -MMD -MP
 

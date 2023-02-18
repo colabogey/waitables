@@ -14,7 +14,7 @@ CFLAGS = $(CFLAGSTOUSE) \
 	$(INCDIRS) $(DEFS)
 
 LDFLAGS = 
-LIBFLAGS = -lwaitable -lvpgnixexception -lgtest -lgmock -L$(PROJECT_BIN_DIR)
+LIBFLAGS = -lwaitable -lvpgnixexception -lgtest -lgmock -L$(PROJECT_BIN_DIR) -L/usr/local/lib -L/usr/local/lib64
 
 SRC_DIR     = ./
 BUILD_DIR   = ./build

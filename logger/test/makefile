@@ -15,7 +15,7 @@ CFLAGS = $(CFLAGSTOUSE) \
 
 LDFLAGS = 
 
-LIBFLAGS = -lvpgnixlogger -lcstring -lgtest -lgmock -lpthread -lc -lgcov -L$(PROJECT_BIN_DIR)
+LIBFLAGS = -lvpgnixlogger -lcstring -lgtest -lgmock -lpthread -lc -lgcov -L$(PROJECT_BIN_DIR) -L/usr/local/lib -L/usr/local/lib64
 
 SRC_DIR     = ./
 BUILD_DIR   = ./build

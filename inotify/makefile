@@ -1,20 +1,24 @@
-#SUBDIRS = src tests
+SUBDIRS = src test
+
 release:
-	make -C ./src
-	make -C ./src install
-	make -C ./test    
-	make -C ./test test
+	@for dir in $(SUBDIRS); do \
+                $(MAKE) -C $$dir $(MAKECMDGOALS); \
+        done
 
 debug:
-	make -C ./src DEBUG=TRUE
-	make -C ./src install
-	make -C ./test DEBUG=TRUE
-	make -C ./test coverage
+	@for dir in $(SUBDIRS); do \
+                $(MAKE) -C $$dir DEBUG=TRUE; \
+        done
+	@make -C ./test coverage
 
 clean:
-	make -C ./src clean
-	make -C ./test clean
+	@for dir in $(SUBDIRS); do \
+                $(MAKE) -C $$dir $(MAKECMDGOALS); \
+        done
 
 testclean:
-	make -C ./test testclean
+	@for dir in $(SUBDIRS); do \
+                $(MAKE) -C $$dir $(MAKECMDGOALS); \
+        done
+
 

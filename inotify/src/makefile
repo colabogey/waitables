@@ -43,12 +43,6 @@ $(BIN_DIR)/libwatcher.a:	$(OBJS)
 	chmod a+x $(BIN_DIR)/libwatcher.a
 	cp $(BIN_DIR)/libwatcher.a $(PROJECT_BIN_DIR)/libwatcher.a
 
-.PHONY: install
-install: all
-	$(INSTALL) tar $(bindir)/$(binprefix)tar
-	-test ! -f rmt || $(INSTALL) rmt /etc/rmt
-	$(INSTALLDATA) $(SRCDIR)/tar.info* $(infodir)
-
 TAGS:   $(SRCS)
 	etags $(SRCS)
 

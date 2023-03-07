@@ -31,8 +31,8 @@ $(info CSTRING_INTERFACE_DIR="$(CSTRING_INTERFACE_DIR)")
 ##
 #global (common) settings
 SHELL = /bin/sh
-#CC = g++
-CC = g++-11
+CC = g++
+#CC = g++-11
 
 DEFS =  -DLINUX=1
 CFLAGSDEBUG = -std=c++20 -O0 -g3 -fmessage-length=0 -MMD -MP -fprofile-arcs -ftest-coverage -fpermissive

@@ -1,22 +1,11 @@
 SUBDIRS = src
 
-release:
-	@for dir in $(SUBDIRS); do \
-                $(MAKE) -C $$dir $(MAKECMDGOALS); \
-        done
+PROJECT_NAME = waitables
+ifeq (, $(PROJECTS_BASE))
+PROJECT_BASE = ${HOME}/projects/${PROJECT_NAME}
+else
+PROJECT_BASE = ${PROJECTS_BASE}/${PROJECT_NAME}
+endif
 
-debug:
-	@for dir in $(SUBDIRS); do \
-                $(MAKE) -C $$dir $(MAKECMDGOALS); \
-        done
-
-clean:
-	@for dir in $(SUBDIRS); do \
-                $(MAKE) -C $$dir $(MAKECMDGOALS); \
-        done
-
-testclean:
-	@for dir in $(SUBDIRS); do \
-                $(MAKE) -C $$dir $(MAKECMDGOALS); \
-        done
+include $(PROJECT_BASE)/generic.mk
 

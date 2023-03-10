@@ -49,21 +49,21 @@ coverage:
 	lcov -c --directory ../src/build --output-file coverage.info
 	genhtml coverage.info --output-directory coverage_out
 
-.PHONY: test
-test:
+.PHONY: tests
+tests:
 	$(BIN_DIR)/$(MYTESTAPP)
 
 .PHONY: testclean
 testclean:
 	rm -f $(BUILD_DIR)/*.gcda $(BUILD_DIR)/*.gcno $(BIN_DIR)/$(MYTESTAPP)
 	rm -rf coverage_out
-	rm coverage.info
+	rm -f coverage.info
 
 .PHONY: clean
 clean:
 	rm -f $(BUILD_DIR)/* $(BIN_DIR)/*
 	rm -rf coverage_out
-	rm coverage.info
+	rm -f coverage.info
 
 .PHONY:	format
 format:

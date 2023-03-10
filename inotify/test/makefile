@@ -42,23 +42,14 @@ $(WATCHER_LIB):
 $(BIN_DIR)/test_watcher:	$(OBJS) $(WATCHER_LIB)
 	$(CC) $(LDFLAGS) -o $(BIN_DIR)/test_watcher $(OBJS) $(LIBFLAGS) -lpthread -lc -lgcov
 
-.PHONY: install
-install: all
-	$(INSTALL) tar $(bindir)/$(binprefix)tar
-	-test ! -f rmt || $(INSTALL) rmt /etc/rmt
-	$(INSTALLDATA) $(SRCDIR)/tar.info* $(infodir)
-
-TAGS:   $(SRCS)
-	etags $(SRCS)
-
 .PHONY: coverage
 coverage:
 	$(BIN_DIR)/test_watcher
 	lcov -c --directory ../src/build --output-file coverage.info
 	genhtml coverage.info --output-directory coverage_out
 
-.PHONY: test
-test:
+.PHONY: tests
+tests:
 	$(BIN_DIR)/test_watcher
 
 .PHONY: testclean

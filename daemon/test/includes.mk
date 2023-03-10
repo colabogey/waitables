@@ -1,4 +1,0 @@
-INCDIRS = -I../include \
-	-I$(OBSERVER_INTERFACE_DIR) \
-	-I$(PROJECT_INCLUDE_DIR)
-

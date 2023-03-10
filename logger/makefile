@@ -1,26 +1,11 @@
-
-$(info PROJECT_BASE_LOGGER="$(PROJECT_BASE)")
-
 SUBDIRS = src test
 
-release:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir $(MAKECMDGOALS); \
-	done
+PROJECT_NAME = waitables
+ifeq (, $(PROJECTS_BASE))
+PROJECT_BASE = ${HOME}/projects/${PROJECT_NAME}
+else
+PROJECT_BASE = ${PROJECTS_BASE}/${PROJECT_NAME}
+endif
 
-debug:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir DEBUG=TRUE; \
-	done
-	@make -C ./test coverage
-
-clean:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir $(MAKECMDGOALS); \
-	done
-
-testclean:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir $(MAKECMDGOALS); \
-	done
+include $(PROJECT_BASE)/generic.mk
 

@@ -52,8 +52,8 @@ coverage:
 	lcov -c --directory ../src/build --output-file coverage.info
 	genhtml coverage.info --output-directory coverage_out
 
-.PHONY: test
-test:
+.PHONY: tests
+tests:
 	$(BIN_DIR)/$(MYTESTAPP)
 
 .PHONY: testclean

@@ -31,17 +31,32 @@ SRCS    = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS    = $(addprefix $(BUILD_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 IDEPS    = $(wildcard $(INC_DIR)/*.h)
 
-.PHONY: all
-all:	install
-	@echo "done for target all"
-
-.PHONY: install
-install:
+.PHONY: release
+release:
 	mkdir -p $(OBSERVER_INTERFACE_DIR)
 	cp $(INC_DIR)/*.h $(OBSERVER_INTERFACE_DIR)
 
+.PHONY: debug
+debug:
+	mkdir -p $(OBSERVER_INTERFACE_DIR)
+	cp $(INC_DIR)/*.h $(OBSERVER_INTERFACE_DIR)
+
+.PHONY: tests
+tests:
+	@echo "nothing to do for test"
+
+.PHONY: coverage
+coverage:
+	@echo "nothing to do for coverage"
+
 .PHONY: clean
 clean:
+	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/*.d \
+	$(BUILD_DIR)/*.gcda $(BUILD_DIR)/*.gcno $(BIN_DIR)/watcher coverage.info
+	rm -rf coverage_out
+
+.PHONY: testclean
+testclean:
 	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/*.d \
 	$(BUILD_DIR)/*.gcda $(BUILD_DIR)/*.gcno $(BIN_DIR)/watcher coverage.info
 	rm -rf coverage_out

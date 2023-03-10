@@ -50,9 +50,9 @@ $(BIN_DIR)/$(MYLIBNAME):	$(OBJS)
 coverage:
 	echo "nothing to be done for coverage"
 
-.PHONY: test
-test:
-	echo "nothing to be done for test"
+.PHONY: tests
+tests:
+	echo "nothing to be done for tests"
 
 .PHONY: testclean
 testclean:

@@ -48,13 +48,11 @@ TAGS:   $(SRCS)
 
 .PHONY: coverage
 coverage:
-	$(BIN_DIR)/watcher
-	lcov -c --directory ../src/build --output-file coverage.info
-	genhtml coverage.info --output-directory coverage_out
+	@echo "nothing to do for coverage"
 
-.PHONY: test
-test:
-	$(BIN_DIR)/watcher
+.PHONY: tests
+tests:
+	@echo "nothing to do for tests"
 
 .PHONY: testclean
 testclean:

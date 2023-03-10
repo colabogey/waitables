@@ -61,6 +61,7 @@ $(LOGGER_LIB):
 
 $(BIN_DIR)/$(MYBINNAME):	$(OBJS) $(LIBDEPS)
 	$(CC) $(LDFLAGS) -o $(BIN_DIR)/$(MYBINNAME) $(OBJS) $(LIBFLAGS)
+	cp $(BIN_DIR)/$(MYBINNAME) $(PROJECT_BIN_DIR)/$(MYBINNAME)
 
 .PHONY: coverage
 coverage:

@@ -61,7 +61,8 @@ endif
     - re-config from an actual file change, for example
 # Platform Info
 - most work has been done on Ubuntu
-```lsb_release -a
+```
+lsb_release -a
 Distributor ID: Ubuntu
 Description:    Ubuntu 22.04.2 LTS
 Release:        22.04

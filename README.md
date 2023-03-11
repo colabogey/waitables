@@ -59,4 +59,21 @@ endif
   - in that range this would fall at the proof of concept end of the spectrum
   - other prototype features can/will be added
     - re-config from an actual file change, for example
-
+# Platform Info
+- most work has been done on Ubuntu
+```lsb_release -a
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.2 LTS
+Release:        22.04
+Codename:       jammy
+```
+- I also make sure, from time to time it works on OpenSUSE
+```
+lsb_release -a
+LSB Version:    n/a
+Distributor ID: openSUSE
+Description:    openSUSE Tumbleweed
+Release:        20230304
+Codename:       n/a
+```
+- you can probably use either.

@@ -42,7 +42,7 @@ $(BIN_DIR)/$(MYLIBNAME):	$(OBJS)
 	ar cr $(BIN_DIR)/$(MYLIBNAME) $(OBJS)
 	chmod a+x $(BIN_DIR)/$(MYLIBNAME)
 	cp $(BIN_DIR)/$(MYLIBNAME) $(PROJECT_BIN_DIR)/$(MYLIBNAME)
-	cp $(INC_DIR)/* $(WAITABLE_INTERFACE_DIR)
+	cp $(INC_DIR)/* $(NETWORK_INTERFACE_DIR)
 
 .PHONY: coverage
 coverage:

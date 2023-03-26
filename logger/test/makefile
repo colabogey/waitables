@@ -58,7 +58,7 @@ tests:
 .PHONY: testclean
 testclean:
 	rm -f $(BUILD_DIR)/*.gcda $(BUILD_DIR)/*.gcno $(BIN_DIR)/$(MYTESTAPP)
-	rm -rf coverage_out
+	rm -f coverage_out
 
 .PHONY: clean
 clean:

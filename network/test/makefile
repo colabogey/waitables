@@ -37,10 +37,10 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 .PHONY: all
 all:    $(BIN_DIR)/$(MYTESTAPP)
 
-$(WAITABLE_LIB):
+$(NETWORK_LIB):
 	touch $(SRCS)
 
-$(BIN_DIR)/$(MYTESTAPP):	$(OBJS) $(WAITABLE_LIB)
+$(BIN_DIR)/$(MYTESTAPP):	$(OBJS) $(NETWORK_LIB)
 	$(CC) $(LDFLAGS) -o $(BIN_DIR)/$(MYTESTAPP) $(OBJS) $(LIBFLAGS) -lpthread -lc -lgcov
 
 .PHONY: coverage

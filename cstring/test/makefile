@@ -64,7 +64,7 @@ testclean:
 .PHONY: clean
 clean:
 	rm -f $(BUILD_DIR)/* $(BIN_DIR)/*
-	rm -rf coverage_out
+	rm -f coverage_out
 
 .PHONY:	format
 format:

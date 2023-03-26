@@ -63,7 +63,7 @@ testclean:
 clean:
 	rm -f $(BUILD_DIR)/* $(BIN_DIR)/*
 	rm -rf coverage_out
-	rm coverage.info
+	rm -f coverage.info
 
 .PHONY:	format
 format:

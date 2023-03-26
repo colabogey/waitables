@@ -1,5 +1,5 @@
 SUBDIRS := logger_interface vpgnixexception cstring logger inotify \
-    observer waitable vpgnixApp vpgnixDaemon
+    observer network waitable vpgnixApp vpgnixDaemon
 
 PROJECT_NAME = waitables
 ifeq (, $(PROJECTS_BASE))
